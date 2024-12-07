@@ -63,7 +63,7 @@
 <div class="widgets">
 
 
-<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/posts/32675.html"><span class="title">这可能是目前-最全的知识管理流！</span></a><a class="item title" href="/posts/7070.html"><span class="title">微软云 AZ100 续期以及最新开通免费实例教程</span></a><a class="item title" href="/posts/16432.html"><span class="title">近来, 摸索出来一个新的读书法, 我称之为「打一架」读书法。</span></a><a class="item title" href="/posts/41229.html"><span class="title">最有价值的学习方法：公开分享你学到的东西</span></a><a class="item title" href="/posts/16107.html"><span class="title">Hello World</span></a></div></widget>
+<widget class="widget-wrapper post-list"><div class="widget-header dis-select"><span class="name">Recent Update</span></div><div class="widget-body fs14"><a class="item title" href="/posts/1.html"><span class="title">这可能是目前-最全的知识管理流！</span></a><a class="item title" href="/posts/7070.html"><span class="title">微软云 AZ100 续期以及最新开通免费实例教程</span></a><a class="item title" href="/posts/16432.html"><span class="title">近来, 摸索出来一个新的读书法, 我称之为「打一架」读书法。</span></a><a class="item title" href="/posts/41229.html"><span class="title">最有价值的学习方法：公开分享你学到的东西</span></a><a class="item title" href="/posts/16107.html"><span class="title">Hello World</span></a></div></widget>
 </div>
 
 </div></aside><div class="l_main" id="main">
@@ -116,9 +116,6 @@
 <li>柳德瓦Liudeva3天前0感觉第二步有点难。。。李继刚: 如果写不出来，说明这块是认知空缺区域，那就空着，把作者的章节对应观点记录下来。 现在你已经有了一块认知基石了！ 再去读第二本同主题的书，拿这个基石和他打一架。 视结果更新你的基石。 递归读下去。柳德瓦Liudeva: 拿我正在看的德鲁克《人与绩效》和麦基的《故事》，几乎没什么能写出来的观点，哪怕有读过德鲁克其他作品的基础，也会因为他每章会输出非常高密度的洞见而显得写的意义没那么大。不过后面读其他作品可以尝试一下，也许可以用作判断一本书相对于自己知识密度多寡的办法。</li>
 <li>山人住在海边00:160有启发。要是能拎一本书出来作为例子说明下，就更棒了！</li>
 </ul>
-<blockquote>
-<p>来自: <a target="_blank" rel="noopener" href="https://m.okjike.com/originalPosts/672b631ac79063fd7bbdbd78">近来, 摸索出来一个新的读书法, 我称之为「打一架」读书法。 - 即刻App</a></p>
-</blockquote>
 
 <div class="article-footer fs14">
     <section id="license">
@@ -138,11 +135,10 @@
       <p>快来参与讨论吧~</p>
 
     </section>
-    <section class='body cmt-body waline'>
+    <section class='body cmt-body twikoo'>
       
 
-<div id="waline_container" class="waline_thread"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
-
+<div id="twikoo_container"><svg class="loading" style="vertical-align:middle;fill:currentColor;overflow:hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="2709"><path d="M832 512c0-176-144-320-320-320V128c211.2 0 384 172.8 384 384h-64zM192 512c0 176 144 320 320 320v64C300.8 896 128 723.2 128 512h64z" p-id="2710"></path></svg></div>
     </section>
   </div>
 
@@ -185,8 +181,8 @@
     cover: `https://gcore.jsdelivr.net/gh/cdn-x/placeholder@1.0.12/cover/76b86c0226ffd.svg`,
   };
   const deps = {
-    jquery: `https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
-    marked: `https://cdn.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
+    jquery: `https://gcore.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js`,
+    marked: `https://gcore.jsdelivr.net/npm/marked@13.0.1/lib/marked.umd.min.js`
   }
   
 
@@ -475,26 +471,20 @@
 <!-- optional -->
 
   <script type="module">
-  import { init } from 'https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.js';
+  const el = document.getElementById('twikoo_container');
+  util.viewportLazyload(el, load_twikoo, false);
 
-  const el = document.getElementById('waline_container');
-  util.viewportLazyload(el, load_waline, false);
-
-  function load_waline(){
+  function load_twikoo() {
     if (!el) return;
-
-    utils.css('https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.css');
-    utils.css('https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline-meta.css');
-
-    const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
-    const waline = init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.js","css":"https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline.css","meta_css":"https://gcore.jsdelivr.net/npm/@waline/client@3.1.3/dist/waline-meta.css","serverURL":"https://co.rans.cc","commentCount":true,"pageview":false,"locale":{"placeholder":"😎嗨，朋友，留下脚印再走呗。"},"reaction":true}, {
-      el: '#waline_container',
-      path: path,
-      
-    }));
+    utils.js('https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js', {defer: true}).then(function () {
+      const path = el.getAttribute('comment_id') ?? decodeURI(window.location.pathname);
+      twikoo.init(Object.assign({"js":"https://gcore.jsdelivr.net/npm/twikoo@1.6.8/dist/twikoo.all.min.js","envId":"http://149.88.69.161:8090/"}, {
+        el: '#twikoo_container',
+        path: path,
+      }));
+    });
   }
 </script>
-
 
 
 
@@ -543,7 +533,7 @@
     hoverDelay: 25
   };
 </script>
-<script defer src="https://cdn.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
+<script defer src="https://gcore.jsdelivr.net/npm/flying-pages@2/flying-pages.min.js"></script><script defer src="https://gcore.jsdelivr.net/npm/vanilla-lazyload@19.1.3/dist/lazyload.min.js"></script>
 <script>
   // https://www.npmjs.com/package/vanilla-lazyload
   // Set the options globally
@@ -566,8 +556,8 @@
 </script><script>
   ctx.fancybox = {
     selector: `.timenode p>img`,
-    css: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
-    js: `https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
+    css: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css`,
+    js: `https://gcore.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js`
   };
   var selector = '[data-fancybox]:not(.error)';
   if (ctx.fancybox.selector) {
